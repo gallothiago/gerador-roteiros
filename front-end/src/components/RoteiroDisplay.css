@@ -1,0 +1,58 @@
+.roteiro-container {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.roteiro-container h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+.dia-roteiro {
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 15px;
+}
+
+.dia-roteiro:last-child {
+  border-bottom: none;
+}
+
+.dia-roteiro h3 {
+  color: #555;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.dia-roteiro ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dia-roteiro li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95em;
+  color: #444;
+}
+
+.dia-roteiro li a {
+  color: #007bff; /* Cor do link */
+  text-decoration: none; /* Remover sublinhado padrão */
+  font-weight: bold;
+}
+
+.dia-roteiro li a:hover {
+  text-decoration: underline; /* Adicionar sublinhado ao passar o mouse */
+}

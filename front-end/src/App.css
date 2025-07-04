@@ -1,0 +1,411 @@
+/* Estilos Globais e Reset Básico */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha no topo */
+  min-height: 100vh; /* Ocupa a altura total da viewport */
+  padding: 20px;
+  box-sizing: border-box; /* Inclui padding na largura/altura */
+}
+
+.app-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px; /* Limita a largura máxima */
+  margin: 20px auto; /* Centraliza na tela */
+  box-sizing: border-box;
+  text-align: center; /* Centraliza o título */
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+/* Status do Backend */
+p {
+  margin-bottom: 15px;
+}
+
+/* Formulário de Viagem */
+.travel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaçamento entre os grupos de formulário */
+  margin-top: 30px;
+  text-align: left; /* Alinha o conteúdo do formulário à esquerda */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  font-size: 1.05em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  outline: none;
+}
+
+.date-group {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os campos de data */
+}
+
+.date-group .date-item {
+  flex: 1; /* Faz com que cada item de data ocupe o mesmo espaço */
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  color: #333;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.1); /* Aumenta um pouco o tamanho do checkbox */
+}
+
+.submit-button {
+  background-color: #28a745; /* Verde vibrante */
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 50%; /* Largura do botão */
+  margin: 20px auto 0 auto; /* Centraliza o botão */
+}
+
+.submit-button:hover {
+  background-color: #218838; /* Verde mais escuro ao hover */
+  transform: translateY(-2px); /* Efeito de elevação */
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Estilos para o roteiro gerado */
+.roteiro-display {
+  margin-top: 40px;
+  padding: 25px;
+  background-color: #e9f7ef;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.roteiro-display h2 {
+  color: #1a5e20;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.roteiro-dia {
+  background-color: #ffffff;
+  border: 1px solid #d4edda;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden; /* Garante que o conteúdo oculto não vaze */
+  transition: all 0.3s ease-out; /* Transição para abertura/fechamento suave */
+}
+
+/* Estilo do cabeçalho do dia, agora clicável */
+.roteiro-dia-header {
+  background-color: #f0f8f0; /* Um pouco mais claro para o cabeçalho */
+  color: #28a745;
+  padding: 15px 20px;
+  margin: 0; /* Remove margem padrão do h3 */
+  font-size: 1.3em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d4edda; /* Linha de separação */
+  transition: background-color 0.3s ease;
+}
+
+.roteiro-dia-header:hover {
+  background-color: #e6ffe6; /* Levemente mais escuro ao passar o mouse */
+}
+
+.roteiro-dia-header.expanded {
+  border-bottom: 1px solid #a8e6a8; /* Borda mais forte quando expandido */
+}
+
+.toggle-icon {
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.roteiro-dia-header.expanded .toggle-icon {
+  transform: rotate(180deg); /* Gira o ícone quando expandido */
+}
+
+/* Estilos para a lista de atividades dentro de um dia */
+.roteiro-atividades {
+  list-style: none;
+  padding: 15px 20px; /* Adiciona padding interno para as atividades */
+  margin: 0;
+}
+
+.roteiro-atividades li {
+  margin-bottom: 10px;
+  padding-left: 30px; /* Espaço para o ícone customizado */
+  position: relative;
+  line-height: 1.5;
+  color: #555;
+}
+
+.activity-icon {
+  position: absolute;
+  left: 0;
+  font-size: 1.2em; /* Tamanho do emoji/ícone */
+  line-height: 1.5;
+}
+
+/* Estilo para a mensagem inicial/call to action */
+.initial-message {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #eaf6ff; /* Um azul claro */
+  border: 1px solid #cceeff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  color: #336699;
+}
+
+.initial-message h2 {
+  color: #2196f3; /* Azul mais vibrante */
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+.initial-message p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Estilo para o botão de limpar roteiro */
+.clear-button {
+  background-color: #dc3545; /* Vermelho para "perigo" */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 30px; /* Espaço acima do botão */
+  width: auto;
+  align-self: center;
+  display: block; /* Para ocupar sua própria linha */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clear-button:hover {
+  background-color: #c82333; /* Vermelho mais escuro ao hover */
+}
+
+/* Animação de Fade-in para o roteiro */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Começa um pouco abaixo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.roteiro-display.fade-in {
+  animation: fadeIn 0.8s ease-out forwards; /* Aplica a animação */
+}
+
+/* Estilo para inputs com erro */
+.input-error {
+  border-color: #dc3545 !important; /* Vermelho mais forte */
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Sombra vermelha */
+}
+
+/* Estilo para mensagens de erro inline */
+.error-message-inline {
+  color: #dc3545; /* Vermelho */
+  font-size: 0.85em;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Opcional: Se a mensagem de erro geral ainda for muito grande, ajuste-a */
+.error-message { /* Este é o erro vindo do backend, exibido em App.jsx */
+  background-color: #f8d7da; /* Fundo vermelho claro */
+  color: #721c24; /* Texto vermelho escuro */
+  border: 1px solid #f5c6cb;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Indicador de Carregamento (Spinner) */
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  color: #333;
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #28a745; /* Green */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite; /* Rotação */
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mensagem de Sucesso */
+.success-message {
+  background-color: #d4edda; /* Verde claro */
+  color: #155724; /* Verde escuro */
+  border: 1px solid #c3e6cb;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0; /* Começa invisível para a animação */
+  animation: fadeInOut 3s forwards; /* Animação de fade in e out */
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* --- Responsividade Básica --- */
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .form-group.date-group {
+    flex-direction: column; /* Coloca as datas em coluna em telas pequenas */
+  }
+
+  .form-group.date-group .date-item {
+    width: 100%; /* Ocupa largura total */
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .travel-form .submit-button {
+    width: 100%; /* Botão de submissão ocupa a largura total */
+  }
+
+  .roteiro-dia-header, .roteiro-atividades li {
+    font-size: 0.95em; /* Reduz o tamanho da fonte */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .initial-message h2 {
+    font-size: 1.5em;
+  }
+
+  .form-group label {
+    font-size: 0.9em;
+  }
+
+  .checkbox-group label {
+    font-size: 0.85em;
+  }
+}
+
+/* Mensagem de Sugestão de Orçamento */
+.budget-suggestion-message {
+  background-color: #e0f7fa; /* Um azul bem claro */
+  color: #00796b; /* Um verde-azulado escuro */
+  border: 1px solid #b2ebf2;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-top: 25px;
+  margin-bottom: 25px; /* Adiciona um pouco de espaço abaixo */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.05em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
