@@ -42,6 +42,4 @@ Siga os passos abaixo para configurar e rodar o projeto em sua máquina local.
 -   npm ou Yarn
 -   Uma chave da Google Cloud Platform (GCP) com as APIs **Places API** e **Geocoding API** ativadas.
 
-### 1. Configuração das Variáveis de Ambiente
 
-Crie um arquivo `.env` na pasta **raiz do projeto** (`gerador_roteiros/.env`) e adicione sua chave da Google API:
