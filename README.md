@@ -54,42 +54,30 @@ Navegue até a pasta do backend (backend/).
 
 Crie um ambiente virtual e ative-o:
 
-Bash
-
 python -m venv venv
 source venv/bin/activate  # macOS/Linux
 venv\Scripts\activate.bat  # Windows
+
 Instale as dependências:
-
-Bash
-
 pip install -r requirements.txt
+
 Crie um arquivo .env na pasta backend/ com sua chave da API do Google:
-
 GOOGLE_API_KEY="SUA_CHAVE_AQUI"
+
 Inicie o servidor:
-
-Bash
-
 flask run
+
 2. Frontend
 Navegue até a pasta do frontend (frontend/).
 
 Instale as dependências:
-
-Bash
-
 npm install
 # ou
 yarn install
+
 Inicie o aplicativo React:
-
-Bash
-
 npm run dev
 # ou
 yarn dev
-📄 Licença
-O projeto está licenciado sob a licença MIT. Para mais detalhes, consulte o arquivo LICENSE.
 
 
