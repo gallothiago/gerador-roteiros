@@ -1,45 +1,95 @@
-# Gerador de Roteiros de Viagem
+Gerador de Roteiros de Viagem
+Um aplicativo web full-stack para gerar roteiros de viagem personalizados com base no destino, datas, orçamento e interesses do usuário.
 
-Este é um projeto web Fullstack que permite aos usuários gerar roteiros de viagem personalizados com base em seu destino, datas, orçamento e interesses.
+🚀 Tecnologias
+Backend (Python)
+Python 3.x: Linguagem de programação.
 
-## Visão Geral
+Flask: Framework para o desenvolvimento da API.
 
-O projeto é composto por duas partes principais:
+Requests: Biblioteca para fazer requisições HTTP para a API do Google Places.
 
--   **Backend:** Desenvolvido em Python com o framework Flask. Responsável por interagir com a Google Places API para buscar pontos de interesse, aplicar filtros de orçamento e interesses, pontuar os lugares e gerar um roteiro otimizado.
--   **Frontend:** Desenvolvido com React (Vite). Interface de usuário intuitiva para que o viajante possa inserir suas preferências e visualizar o roteiro gerado.
+python-dotenv: Para gerenciar variáveis de ambiente.
 
-## Funcionalidades
+Frontend (React)
+React.js (Vite): Biblioteca JavaScript para construir a interface de usuário.
 
--   Geração de roteiros personalizados por destino, datas de início e fim, orçamento e tipo de viajante.
--   Filtragem de pontos de interesse com base em categorias (Praias, Museus, Gastronomia, etc.).
--   Sugestão de atividades por período do dia (Manhã, Tarde, Noite).
--   Integração com a Google Places API para obter dados de locais (nomes, tipos, níveis de preço).
--   Exibição de links para o Google Maps para cada ponto de interesse no roteiro.
+JavaScript (ES6+): Linguagem de programação.
 
-## Tecnologias Utilizadas
+Axios: Cliente HTTP para fazer requisições à API do backend.
 
-**Backend:**
--   Python 3.x
--   Flask
--   Requests (para chamadas HTTP externas, ex: Google APIs)
--   python-dotenv (para carregar variáveis de ambiente)
+HTML5 e CSS3: Estrutura e estilização.
 
-**Frontend:**
--   React.js (com Vite para um ambiente de desenvolvimento rápido)
--   JavaScript (ES6+)
--   Axios (para requisições HTTP ao backend)
--   HTML5 / CSS3
+🛠️ Funcionalidades
+Backend:
 
-## Como Rodar o Projeto
+Interage com a API do Google Places para buscar pontos de interesse.
 
-Siga os passos abaixo para configurar e rodar o projeto em sua máquina local.
+Filtra e pontua os locais com base no orçamento e nos interesses do usuário.
 
-### Pré-requisitos
+Gera um roteiro otimizado.
 
--   Python 3.8+
--   Node.js (LTS recomendado)
--   npm ou Yarn
--   Uma chave da Google Cloud Platform (GCP) com as APIs **Places API** e **Geocoding API** ativadas.
+Frontend:
+
+Interface amigável para o usuário inserir suas preferências.
+
+Exibe o roteiro de viagem gerado de forma clara e intuitiva.
+
+⚙️ Pré-requisitos
+Para rodar o projeto localmente, você precisará ter instalado:
+
+Python 3.8+
+
+Node.js (LTS recomendado)
+
+npm ou Yarn
+
+Uma chave da Google Cloud Platform (GCP) com as APIs Places e Geocoding ativadas.
+
+🔧 Configuração e Instalação
+1. Backend
+Clone o repositório.
+
+Navegue até a pasta do backend (backend/).
+
+Crie um ambiente virtual e ative-o:
+
+Bash
+
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate.bat  # Windows
+Instale as dependências:
+
+Bash
+
+pip install -r requirements.txt
+Crie um arquivo .env na pasta backend/ com sua chave da API do Google:
+
+GOOGLE_API_KEY="SUA_CHAVE_AQUI"
+Inicie o servidor:
+
+Bash
+
+flask run
+2. Frontend
+Navegue até a pasta do frontend (frontend/).
+
+Instale as dependências:
+
+Bash
+
+npm install
+# ou
+yarn install
+Inicie o aplicativo React:
+
+Bash
+
+npm run dev
+# ou
+yarn dev
+📄 Licença
+O projeto está licenciado sob a licença MIT. Para mais detalhes, consulte o arquivo LICENSE.
 
 
